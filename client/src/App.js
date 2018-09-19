@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom';
-import Home from './components/Home'
-import NoteForm from './components/NoteForm'
 import NoteList from './components/NoteList'
-// import Footer from './Footer'
+import Note from './components/Note'
+
 
 const App = () => (
   <Fragment>
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/Note" component={Note} />
-      <Route component={NoMatch} />
+      <Route exact path="/" component={NoteList} />
+      <Route path="/Note/id" component={Note} />
+      
     </Switch>
   </Fragment>
   
