@@ -1,19 +1,16 @@
 import React, { Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom';
-import NoteList from './components/NoteList'
+import Notes from './components/Notes'
 import Note from './components/Note'
 
 
 const App = () => (
   <Fragment>
     <Switch>
-      <Route exact path="/" component={NoteList} />
+      <Route exact path="/" component={Notes} />
       <Route path="/Note/id" component={Note} />
-      
     </Switch>
-  </Fragment>
-  
+  </Fragment>  
 )
-
 
 export default App;
