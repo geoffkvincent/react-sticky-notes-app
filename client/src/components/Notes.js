@@ -25,7 +25,7 @@ class Notes extends React.Component {
       <Container>
         <Header as="h1">Sticky Notes</Header>
         <Link to="/notes/new">
-         <Button>Create Note</Button>
+         <Button color="green">Create Note</Button>
         </Link>
         <Card.Group>
           {this.renderNotes()}
