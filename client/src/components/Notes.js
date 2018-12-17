@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux' 
 import { Link } from 'react-router-dom'
 import { getNotes } from '../reducers/notes'
-import { Card, Container } from 'semantic-ui-react'
+import { Card, Container, Header, Button } from 'semantic-ui-react'
 
 class Notes extends React.Component {
   componentDidMount() {
@@ -23,6 +23,10 @@ class Notes extends React.Component {
   render() {
     return (
       <Container>
+        <Header as="h1">Sticky Notes</Header>
+        <Link to="/notes/new">
+         <Button>Create Note</Button>
+        </Link>
         <Card.Group>
           {this.renderNotes()}
         </Card.Group>
