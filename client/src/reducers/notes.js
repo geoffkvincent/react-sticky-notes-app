@@ -40,6 +40,14 @@ export default ( state = [], action ) => {
     case ADD_NOTE:
       return [ action.note, ...state ]
     case UPDATE_NOTE:
-      return state.map( )
+      return state.map( n => {
+        if( action.note.id === n.id )
+          return action.note
+        return n
+      })
+    case DELETE_NOTE:
+      return state.filter( n => n.id !== action.id )
+    default:
+      return state
   }
 }
