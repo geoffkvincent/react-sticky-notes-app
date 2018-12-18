@@ -4,7 +4,7 @@ import {Route} from 'react-router-dom'
 import Notes from './components/Notes'
 import Note from './components/Note'
 import {getNotes} from './reducers/note'
-import {Loader, Segement, Dimmer } from './semantic-ui-react'
+import {Loader, Segment, Dimmer } from './semantic-ui-react'
 
 class FetchNotes extends React.Component {
   state = { loaded: false }
