@@ -4,7 +4,7 @@ import rootReducer from './reducers/index';
 
 const enhancers = compose(
   applyMiddleware(thunk),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  window.__devToolsExtension__ ? window.__devToolsExtension__() : f => f
 );
 
 const store = createStore(rootReducer, {}, enhancers);
