@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {addNote} from '../reducers/notes'
 import { Form, Container } from 'semantic-ui-react'
 
 class NoteForm extends React.Component {
@@ -14,7 +15,7 @@ class NoteForm extends React.Component {
     const { dispatch } = this.props
     const { title, description } = this.state
     const note = { title, description, complete: false }
-    dispatch({ type: "ADD_NOTE", note })
+    dispatch(addNote())
     this.setState({ title: '', description: ''})
     this.props.history.push('/')
   }
