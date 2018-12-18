@@ -11,9 +11,7 @@ const App = () => (
     <Navbar />
     <Switch>
       <Route path='/notes' component={FetchNotes} />
-      <Route exact path="/" component={Notes} />
       <Route exact path ="/notes/new" component={NoteForm} />
-      <Route exact path="/note/:id" component={Note} />
       <Route exact path="/note/:id/edit" component={NoteForm} />
     </Switch>
   </Fragment>  

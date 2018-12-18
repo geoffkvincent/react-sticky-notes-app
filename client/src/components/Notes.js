@@ -5,9 +5,7 @@ import { getNotes } from '../reducers/notes'
 import { Card, Container, Header, Button } from 'semantic-ui-react'
 
 class Notes extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(getNotes())
-  }
+  
 
   renderNotes = () => {
     return this.props.notes.map( note => 
