@@ -13,8 +13,9 @@ export const getNotes = () => {
 }
 
 export const addNote = (note) => {
+  debugger
   return (dispatch) => {
-    axios.post('/api/notes')
+    axios.post('/api/notes', {note})
       .then( res => dispatch({ type: ADD_NOTE, note: res.data }) )
   }
 }
@@ -38,6 +39,7 @@ export default ( state = [], action ) => {
     case NOTES:
       return action.notes
     case ADD_NOTE:
+    debugger
       return [ action.note, ...state ]
     case UPDATE_NOTE:
       return state.map( n => {
