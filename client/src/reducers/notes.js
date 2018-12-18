@@ -5,10 +5,11 @@ const ADD_NOTE = 'ADD_NOTE'
 const UPDATE_NOTE = 'UPDATE_NOTE'
 const DELETE_NOTE = 'DELETE_NOTE'
 
-export const getNotes = () => {
+export const getNotes = (cb) => {
   return (dispatch) => {
     axios.get('/api/notes')
       .then( res => dispatch({ type: NOTES, notes: res.data }) )
+      .then(cb())
   }
 }
 
