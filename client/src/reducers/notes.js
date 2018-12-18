@@ -39,6 +39,7 @@ export default ( state = [], action ) => {
     case NOTES:
       return action.notes
     case ADD_NOTE:
+    debugger
       return [ action.note, ...state ]
     case UPDATE_NOTE:
       return state.map( n => {

@@ -15,7 +15,7 @@ class NoteForm extends React.Component {
     const { dispatch } = this.props
     const { title, description } = this.state
     const note = { title, description, complete: false }
-    dispatch(addNote())
+    dispatch(addNote(note))
     this.setState({ title: '', description: ''})
     this.props.history.push('/')
   }
