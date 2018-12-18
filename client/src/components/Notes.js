@@ -11,8 +11,8 @@ class Notes extends React.Component {
 
   renderNotes = () => {
     return this.props.notes.map( note => 
-      <Card key={note.id}>
-        <Card.Content>
+      <Card  style={{backgroundColor: 'yellow'}} key={note.id}>
+        <Card.Content >
           <Card.Header>{note.title}</Card.Header>
           <Card.Description>{note.description}</Card.Description>
         </Card.Content>
