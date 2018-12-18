@@ -5,7 +5,6 @@ import Note from './components/Note'
 import NoteForm from './components/NoteForm'
 import Navbar from './components/Navbar'
 
-
 const App = () => (
   <Fragment>
     <Navbar />

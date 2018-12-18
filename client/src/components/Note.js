@@ -1,10 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import {Header, Button, Container, Table} from 'semantic-ui-react'
 
-const Note = () => {
+const Note = ({note}) => {
   return (
-    <div>
-    </div>
+    <h1>{}</h1>
   )
 }
 
-export default Note;
+const mapStateToProps = (state, props) => {
+  return { note: state.notes.find( n => n.id === parseInt(props.match.params.id))}
+}
+export default connect(mapStateToProps)(Note);
