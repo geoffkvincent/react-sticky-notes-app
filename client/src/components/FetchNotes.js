@@ -21,7 +21,7 @@ class FetchNotes extends React.Component {
       return (
         <div>
           <Route exact path="/" component={Notes} />
-          <Route exact path="/note/:id" component={Note} />
+          <Route exact path="/notes/:id" component={Note} />
         </div>
       )
     } else {

@@ -15,7 +15,7 @@ class Notes extends React.Component {
           <Card.Description>{note.description}</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Link to={`/note/${note.id}`}>
+          <Link to={`/notes/${note.id}`}>
             <Button>View</Button>
           </Link>
         </Card.Content>
