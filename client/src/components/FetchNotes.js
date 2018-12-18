@@ -6,4 +6,8 @@ import Note from './components/Note'
 import {getNotes} from './reducers/note'
 import {Loader, Segement, } from './semantic-ui-react'
 
-class Fetch
+class FetchNotes extends React.Component {
+
+}
+
+export default FetchNotes
