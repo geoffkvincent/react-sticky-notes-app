@@ -4,7 +4,10 @@ import {Header, Button, Container, Table} from 'semantic-ui-react'
 
 const Note = ({note}) => {
   return (
-    <h1>{}</h1>
+    <Container>
+      <Header>{note.title}</Header>
+      <p>{note.description}</p>
+    </Container>
   )
 }
 
