@@ -16,6 +16,10 @@ class Notes extends React.Component {
           <Card.Header>{note.title}</Card.Header>
           <Card.Description>{note.description}</Card.Description>
         </Card.Content>
+        <Card.Content extra>
+          <Button>View</Button>
+          <Button>Delete</Button>
+        </Card.Content>
       </Card>
     )
   }
