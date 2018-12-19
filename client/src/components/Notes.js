@@ -5,7 +5,6 @@ import { Card, Container, Header, Button } from 'semantic-ui-react'
 
 class Notes extends React.Component {
   
-
   renderNotes = () => {
     return this.props.notes.map( note => 
       <Card  style={{backgroundColor: 'yellow'}} key={note.id}>
