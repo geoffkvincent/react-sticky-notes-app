@@ -38,6 +38,6 @@ class Api::NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:name, :description, :complete)
+    params.require(:note).permit(:title, :description, :complete)
   end
 end
