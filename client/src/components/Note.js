@@ -12,7 +12,7 @@ class Note extends React.Component {
   }
 
   render() {
-    const { note, dispatch } = this.props
+    const { note } = this.props
     return (
       <Container>
         <Header>{note.title}</Header>
