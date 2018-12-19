@@ -5,6 +5,12 @@ import {Header, Button, Container, Table} from 'semantic-ui-react'
 
 class Note extends React.Component {
 
+  handleDelete = () => {
+    const { note, dispatch } = this.props
+    dispatch(deleteNote(note.id))
+    this.props.history.push('/')
+  }
+
   render() {
     const { note, dispatch } = this.props
     return (
@@ -12,7 +18,7 @@ class Note extends React.Component {
         <Header>{note.title}</Header>
         <p>{note.description}</p>
         <Button>Edit</Button>
-        <Button onClick={() => dispatch(deleteNote())}>Delete</Button>
+        <Button onClick={this.handleDelete}>Delete</Button>
       </Container>
     )
   }
