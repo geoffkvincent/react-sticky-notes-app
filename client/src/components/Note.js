@@ -15,6 +15,6 @@ const Note = ({note}) => {
 }
 
 const mapStateToProps = (state, props) => {
-  return { note: state.notes.find( n => n.id === parseInt(props.match.params.id))}
+  return { note: state.notes.find( n => n.id === parseInt(props.match.params.id)) }
 }
 export default connect(mapStateToProps)(Note);

@@ -6,10 +6,14 @@ const UPDATE_NOTE = 'UPDATE_NOTE'
 const DELETE_NOTE = 'DELETE_NOTE'
 
 export const getNotes = (cb) => {
+  debugger
   return (dispatch) => {
     axios.get('/api/notes')
-      .then( res => dispatch({ type: NOTES, notes: res.data }) )
-      .then(cb())
+      .then( res => {
+        dispatch({ type: NOTES, notes: res.data })
+        cb()
+        debugger 
+      })
   }
 }
 
@@ -18,6 +22,7 @@ export const addNote = (note) => {
   return (dispatch) => {
     axios.post('/api/notes', {note})
       .then( res => dispatch({ type: ADD_NOTE, note: res.data }) )
+      debugger
   }
 }
 

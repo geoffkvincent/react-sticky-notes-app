@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Route} from 'react-router-dom'
+import {Route,Switch} from 'react-router-dom'
 import Notes from './Notes'
 import Note from './Note'
+import NoteForm from './NoteForm'
 import {getNotes} from '../reducers/notes'
 import {Loader, Segment, Dimmer } from 'semantic-ui-react'
 
@@ -19,10 +20,11 @@ class FetchNotes extends React.Component {
     const { loaded } = this.state
     if (loaded) {
       return (
-        <div>
+        <Switch>
           <Route exact path="/" component={Notes} />
+          <Route exact path ="/notes/new" component={NoteForm} />
           <Route exact path="/notes/:id" component={Note} />
-        </div>
+        </Switch>
       )
     } else {
       return (

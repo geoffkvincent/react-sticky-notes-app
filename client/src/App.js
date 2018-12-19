@@ -4,12 +4,13 @@ import NoteForm from './components/NoteForm'
 import Navbar from './components/Navbar'
 import FetchNotes from './components/FetchNotes'
 
+
 const App = () => (
   <Fragment>
     <Navbar />
     <Switch>
       <Route path='/' component={FetchNotes} />
-      <Route exact path ="/notes/new" component={NoteForm} />
+      
       <Route exact path="/note/:id/edit" component={NoteForm} />
     </Switch>
   </Fragment>  

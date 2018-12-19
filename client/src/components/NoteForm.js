@@ -11,13 +11,15 @@ class NoteForm extends React.Component {
   }
 
   handleSubmit = (e) => {
+    debugger
     e.preventDefault()
     const { dispatch } = this.props
     const { title, description } = this.state
     const note = { title, description, complete: false }
     dispatch(addNote(note))
     this.setState({ title: '', description: ''})
-    this.props.history.push('/')
+    
+    debugger
   }
 
   render() {
