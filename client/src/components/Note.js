@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {deleteNote} from '../reducers/notes'
-import {Header, Button, Container, Table} from 'semantic-ui-react'
+import {Header, Button, Container} from 'semantic-ui-react'
 
 class Note extends React.Component {
 

@@ -11,7 +11,6 @@ class NoteForm extends React.Component {
   }
 
   handleSubmit = (e) => {
-    debugger
     e.preventDefault()
     const { dispatch } = this.props
     const { title, description } = this.state
@@ -19,7 +18,6 @@ class NoteForm extends React.Component {
     dispatch(addNote(note))
     this.setState({ description: '', title: '' })
     this.props.history.push('/')
-    debugger
   }
 
   render() {
