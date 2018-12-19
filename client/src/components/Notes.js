@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux' 
 import { Link } from 'react-router-dom'
-import { getNotes } from '../reducers/notes'
 import { Card, Container, Header, Button } from 'semantic-ui-react'
 
 class Notes extends React.Component {
