@@ -6,13 +6,13 @@ import {Header, Button, Container, Table} from 'semantic-ui-react'
 class Note extends React.Component {
 
   render() {
-    const {note} = this.props
+    const { note, dispatch } = this.props
     return (
       <Container>
         <Header>{note.title}</Header>
         <p>{note.description}</p>
         <Button>Edit</Button>
-        <Button onClick={this.handleChange}>Delete</Button>
+        <Button onClick={() => dispatch(deleteNote())}>Delete</Button>
       </Container>
     )
   }
