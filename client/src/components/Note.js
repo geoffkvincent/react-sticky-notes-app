@@ -2,15 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux'
 import {Header, Button, Container, Table} from 'semantic-ui-react'
 
-const Note = ({note}) => {
-  return (
-    <Container>
-      <Header>{note.title}</Header>
-      <p>{note.description}</p>
-      <Button>Edit</Button>
-      <Button onClick={this.handleChange}>Delete</Button>
-    </Container>
-  )
+class Note extends React.Component {
+  render() {
+    const {note} = this.props
+    return (
+      <Container>
+        <Header>{note.title}</Header>
+        <p>{note.description}</p>
+        <Button>Edit</Button>
+        <Button onClick={this.handleChange}>Delete</Button>
+      </Container>
+    )
+  }
 }
 
 const mapStateToProps = (state, props) => {
