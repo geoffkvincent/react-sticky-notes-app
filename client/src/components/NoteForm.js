@@ -17,7 +17,7 @@ class NoteForm extends React.Component {
     const { title, description } = this.state
     const note = { title, description, complete: false }
     dispatch(addNote(note))
-    this.setState({ title: '', description: ''})
+    
     
     debugger
   }
