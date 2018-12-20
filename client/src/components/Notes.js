@@ -8,7 +8,7 @@ class Notes extends React.Component {
   
   renderNotes = () => {
     return this.props.notes.map( note => 
-      <CardStyle style={{backgroundColor: 'yellow'}} key={note.id}>
+      <CardStyle style={{backgroundColor: 'yellow', borderColor: 'black'}} key={note.id}>
         <Card.Content >
           <Card.Header>{note.title}</Card.Header>
           <Card.Description>{note.description}</Card.Description>
@@ -27,7 +27,7 @@ class Notes extends React.Component {
       <Container>
         <Header as="h1">Sticky Notes</Header>
         <Link to="/notes/new">
-         <Button color="green">Create Note</Button>
+         <Button color="black">Create Note</Button>
         </Link>
         <Card.Group itemsPerRow={4}>
           {this.renderNotes()}

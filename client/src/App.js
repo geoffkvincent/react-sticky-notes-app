@@ -17,7 +17,7 @@ const App = () => (
 )
 
 const AppContainer = styled.div `
-  background: linear-gradient(to bottom right, red, black)
+  background: linear-gradient(to bottom right, rgb(0, 255, 98), black)
 `
 
 export default App;
