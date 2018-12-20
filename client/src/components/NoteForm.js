@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addNote} from '../reducers/notes'
+import {addNote, updateNote} from '../reducers/notes'
 import { Form, Container } from 'semantic-ui-react'
 
 class NoteForm extends React.Component {
@@ -19,11 +19,18 @@ class NoteForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { dispatch } = this.props
+    const { id } = this.props.location.state.note
     const { title, description } = this.state
     const note = { title, description, complete: false }
-    dispatch(addNote(note))
-    this.setState({ description: '', title: '' })
-    this.props.history.push('/')
+    if (id) {
+      dispatch(updateNote(note))
+      this.setState({ description: '', title: '' })
+      this.props.history.push('/')
+    } else {
+      dispatch(addNote(note))
+      this.setState({ description: '', title: '' })
+      this.props.history.push('/')
+    }
   }
 
   render() {
