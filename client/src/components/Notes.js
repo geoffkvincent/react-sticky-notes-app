@@ -15,7 +15,7 @@ class Notes extends React.Component {
         </Card.Content>
         <Card.Content extra>
           <Link to={`/notes/${note.id}`}>
-            <Button>View</Button>
+            <Button style={{backgroundColor: 'rgb(0, 255, 98)', color: 'black'}}>View</Button>
           </Link>
         </Card.Content>
       </CardStyle>
@@ -27,7 +27,7 @@ class Notes extends React.Component {
       <Container>
         <Header as="h1">Sticky Notes</Header>
         <Link to="/notes/new">
-         <Button color="black">Create Note</Button>
+         <Button color="black" style={{ color: 'rgb(0, 255, 98)' }}>Create Note</Button>
         </Link>
         <Card.Group itemsPerRow={4}>
           {this.renderNotes()}
@@ -40,6 +40,10 @@ class Notes extends React.Component {
 const mapStateToProps = (state) => {
   return { notes: state.notes }
 }
+
+const ButtonS = styled(Button)`
+  color: rgb(0, 255, 98);
+`
 
 const CardStyle = styled(Card) `
   border-width: 50px !important;
