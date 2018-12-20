@@ -6,6 +6,12 @@ import { Form, Container } from 'semantic-ui-react'
 class NoteForm extends React.Component {
   state = { title: '', description: '' }
 
+  componentDidMount(){
+    const {id, title, description} = this.props.location.state.note
+    if (id)
+      this.setState({ title, description})
+  }
+
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value })
   }
@@ -22,6 +28,7 @@ class NoteForm extends React.Component {
 
   render() {
     const { title, description } = this.state
+    const {id} = this.props.location.state.note
     return (
       <Container>
         <Form onSubmit={this.handleSubmit}>
@@ -40,7 +47,7 @@ class NoteForm extends React.Component {
             onChange={this.handleChange}
           />
           <Form.Button>
-            New
+            {id ? 'Edit' : 'New'}
           </Form.Button>
         </Form>
       </Container>

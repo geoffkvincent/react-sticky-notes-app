@@ -6,6 +6,7 @@ import Note from './Note'
 import NoteForm from './NoteForm'
 import {getNotes} from '../reducers/notes'
 import {Loader, Segment, Dimmer } from 'semantic-ui-react'
+import styled from 'styled-components'
 
 class FetchNotes extends React.Component {
   state = { loaded: false }
@@ -20,11 +21,14 @@ class FetchNotes extends React.Component {
     const { loaded } = this.state
     if (loaded) {
       return (
-        <Switch>
-          <Route exact path="/" component={Notes} />
-          <Route exact path ="/notes/new" component={NoteForm} />
-          <Route exact path="/notes/:id" component={Note} />
-        </Switch>
+        <AppContainer>
+          <Switch>
+            <Route exact path="/" component={Notes} />
+            <Route exact path ="/notes/new" component={NoteForm} />
+            <Route exact path="/notes/:id" component={Note} />
+            <Route exact path="/notes/:id/edit" component={NoteForm} />
+          </Switch>
+        </AppContainer>
       )
     } else {
       return (
@@ -37,5 +41,9 @@ class FetchNotes extends React.Component {
     }
   }
 }
+
+const AppContainer = styled.div `
+  background: linear-gradient(to bottom right, rgb(0, 255, 98), black)
+`
 
 export default connect()(FetchNotes)
