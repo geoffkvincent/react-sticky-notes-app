@@ -17,7 +17,9 @@ class Note extends React.Component {
       <Container>
         <Header>{note.title}</Header>
         <p>{note.description}</p>
-        <Button>Edit</Button>
+        <Link to={{ pathname: `/notes/${note.id}/edit`, state: { note }}}>
+          <Button>Edit</Button>
+        </Link>
         <Button onClick={this.handleDelete}>Delete</Button>
       </Container>
     )
