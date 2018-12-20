@@ -8,15 +8,17 @@ import styled from 'styled-components'
 
 
 const App = () => (
-  <Container>
+  <AppContainer>
     <Navbar />
     <Switch>
       <Route path='/' component={FetchNotes} />
       <Route exact path="/note/:id/edit" component={NoteForm} />
     </Switch>
-  </Container>  
+  </AppContainer>  
 )
 
-
+const AppContainer = styled.div `
+  background: linear-gradient(to bottom right, orange, black)
+`
 
 export default App;
