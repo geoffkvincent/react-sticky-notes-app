@@ -23,9 +23,11 @@ export const addNote = (note) => {
 }
 
 export const updateNote = (note) => {
+  debugger
   return (dispatch) => {
     axios.put(`/api/notes/${note.id}`, { note })
       .then( res => dispatch({ type: UPDATE_NOTE, note: res.data}))
+      debugger
   }
 }
 
@@ -43,6 +45,7 @@ export default ( state = [], action ) => {
     case ADD_NOTE:
       return [ action.note, ...state ]
     case UPDATE_NOTE:
+    debugger
       return state.map( n => {
         if( action.note.id === n.id )
           return action.note

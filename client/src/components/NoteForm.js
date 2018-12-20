@@ -7,9 +7,11 @@ class NoteForm extends React.Component {
   state = { title: '', description: '' }
 
   componentDidMount(){
+    debugger
     const {id, title, description} = this.props.location.state.note
     if (id)
       this.setState({ title, description})
+      debugger
   }
 
   handleChange = ({ target: { name, value } }) => {
@@ -21,8 +23,9 @@ class NoteForm extends React.Component {
     const { dispatch } = this.props
     const { id } = this.props.location.state.note
     const { title, description } = this.state
-    const note = { title, description, complete: false }
+    const note = { title, description, complete: false, id }
     if (id) {
+      debugger
       dispatch(updateNote(note))
       this.setState({ description: '', title: '' })
       this.props.history.push('/')
