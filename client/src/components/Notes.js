@@ -28,7 +28,7 @@ class Notes extends React.Component {
         <Link to="/notes/new">
          <Button color="green">Create Note</Button>
         </Link>
-        <Card.Group>
+        <Card.Group itemsPerRow={4}>
           {this.renderNotes()}
         </Card.Group>
       </Container>
