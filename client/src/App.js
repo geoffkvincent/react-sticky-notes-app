@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import NoteForm from './components/NoteForm'
 import Navbar from './components/Navbar'
 import FetchNotes from './components/FetchNotes'
-import {Container} from 'semantic-ui-react'
 import styled from 'styled-components'
 
 
@@ -18,7 +17,7 @@ const App = () => (
 )
 
 const AppContainer = styled.div `
-  background: linear-gradient(to bottom right, orange, black)
+  background: linear-gradient(to bottom right, red, black)
 `
 
 export default App;

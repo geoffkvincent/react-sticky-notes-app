@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {deleteNote} from '../reducers/notes'
 import {Header, Button, Container} from 'semantic-ui-react'

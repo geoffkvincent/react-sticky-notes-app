@@ -2,12 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux' 
 import { Link } from 'react-router-dom'
 import { Card, Container, Header, Button } from 'semantic-ui-react'
+import styled from 'styled-components'
 
 class Notes extends React.Component {
   
   renderNotes = () => {
     return this.props.notes.map( note => 
-      <Card  style={{backgroundColor: 'yellow'}} key={note.id}>
+      <CardStyle style={{backgroundColor: 'yellow'}} key={note.id}>
         <Card.Content >
           <Card.Header>{note.title}</Card.Header>
           <Card.Description>{note.description}</Card.Description>
@@ -17,7 +18,7 @@ class Notes extends React.Component {
             <Button>View</Button>
           </Link>
         </Card.Content>
-      </Card>
+      </CardStyle>
     )
   }
   
@@ -39,5 +40,10 @@ class Notes extends React.Component {
 const mapStateToProps = (state) => {
   return { notes: state.notes }
 }
+
+const CardStyle = styled(Card) `
+  border-width: 50px !important;
+  border-color: green;
+`
 
 export default connect(mapStateToProps)(Notes);
