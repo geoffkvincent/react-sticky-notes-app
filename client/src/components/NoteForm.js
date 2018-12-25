@@ -7,7 +7,7 @@ class NoteForm extends React.Component {
   state = { title: '', description: '' }
 
   componentDidMount(){
-   const {id, title, description} = this.props.location.state.note
+   const {id} = this.props.match.params
     if (id)
       this.setState({ title, description})
   }
