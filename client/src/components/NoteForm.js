@@ -21,7 +21,7 @@ class NoteForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { dispatch } = this.props
-    const { id } = this.props.location.state.note
+    const { id } = this.props.match.params
     const { title, description } = this.state
     const note = { title, description, complete: false, id }
     if (id) {
