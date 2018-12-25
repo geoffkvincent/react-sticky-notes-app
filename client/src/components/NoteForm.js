@@ -11,7 +11,6 @@ class NoteForm extends React.Component {
     const {id, title, description} = this.props.location.state.note
     if (id)
       this.setState({ title, description})
-      debugger
   }
 
   handleChange = ({ target: { name, value } }) => {
