@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import {connect} from 'react-redux'
 import {addNote, updateNote} from '../reducers/notes'
 import { Form, Container } from 'semantic-ui-react'
@@ -9,8 +10,9 @@ class NoteForm extends React.Component {
   componentDidMount(){
     const {title, description} = this.state
     const {id} = this.props.match.params
-
     if (id)
+    axios.get(`/api/notes/${id}`)
+      .then( res => this.setState({}))
       this.setState({ title, description})
   }
 
