@@ -13,7 +13,7 @@ class NoteForm extends React.Component {
     if (id)
     axios.get(`/api/notes/${id}`)
       .then( res => this.setState({}))
-      this.setState({ title, description})
+      this.setState({ ...res.data })
   }
 
   handleChange = ({ target: { name, value } }) => {
