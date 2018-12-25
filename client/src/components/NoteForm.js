@@ -7,7 +7,8 @@ class NoteForm extends React.Component {
   state = { title: '', description: '' }
 
   componentDidMount(){
-   const {id} = this.props.match.params
+    const {id} = this.props.match.params
+
     if (id)
       this.setState({ title, description})
   }
@@ -36,7 +37,7 @@ class NoteForm extends React.Component {
 
   render() {
     const { title, description } = this.state
-    const {id} = this.props.location.state.note
+    const {id} = this.props.match.params
     return (
       <Container>
         <Form onSubmit={this.handleSubmit}>
