@@ -26,7 +26,7 @@ class Notes extends React.Component {
     return (
       <Container>
         <Header as="h1">Sticky Notes</Header>
-        <Link to={{ pathname: "/notes/new",}}>
+        <Link to={{ pathname: "/notes/new", state:}}>
          <Button color="black" style={{ color: 'rgb(0, 255, 98)' }}>Create Note</Button>
         </Link>
         <Card.Group itemsPerRow={4}>
