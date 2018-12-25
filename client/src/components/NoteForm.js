@@ -8,7 +8,6 @@ class NoteForm extends React.Component {
   state = { title: '', description: '' }
 
   componentDidMount(){
-    const {title, description} = this.state
     const {id} = this.props.match.params
     if (id)
     axios.get(`/api/notes/${id}`)
