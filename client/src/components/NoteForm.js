@@ -38,7 +38,7 @@ class NoteForm extends React.Component {
 
   render() {
     const { title, description } = this.state
-    const {id} = this.props.location.state.note
+    // const {id} = this.props.location.state.note
     return (
       <Container>
         <Form onSubmit={this.handleSubmit}>
