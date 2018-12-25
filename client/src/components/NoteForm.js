@@ -7,6 +7,7 @@ class NoteForm extends React.Component {
   state = { title: '', description: '' }
 
   componentDidMount(){
+    const {title, description} = this.state
     const {id} = this.props.match.params
 
     if (id)
@@ -24,7 +25,6 @@ class NoteForm extends React.Component {
     const { title, description } = this.state
     const note = { title, description, complete: false, id }
     if (id) {
-      debugger
       dispatch(updateNote(note))
       this.setState({ description: '', title: '' })
       this.props.history.push('/')
