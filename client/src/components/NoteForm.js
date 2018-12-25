@@ -9,10 +9,9 @@ class NoteForm extends React.Component {
 
   componentDidMount(){
     const {id} = this.props.match.params
-    if (id)
+    if (id) 
     axios.get(`/api/notes/${id}`)
-      .then( res => this.setState({}))
-      this.setState({ ...res.data })
+      .then( res => this.setState({ ...res.data }))
   }
 
   handleChange = ({ target: { name, value } }) => {
